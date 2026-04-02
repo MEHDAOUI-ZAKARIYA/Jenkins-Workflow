@@ -1,0 +1,11 @@
+pipline {
+    agent any 
+
+    stages  {
+        stage('Checkout'){
+            steps {
+                checkout scm
+            }
+        }
+    }
+}
