@@ -7,5 +7,28 @@ pipeline {
                 checkout scm
             }
         }
+	
+       stage('Build'){
+	    steps {
+                sh 'mvn clean package
+        }
+}   
+       stage ('Test'){
+         steps {
+             sh 'mvn test'
+} 
     }
+
+}
+  
+  post {
+      
+       success {
+           echo  ' Build and Tests passed !'
+}       
+       failure {
+           echo 'BUild failed'
+    }
+}
+
 }
