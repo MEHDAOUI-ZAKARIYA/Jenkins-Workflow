@@ -26,7 +26,7 @@ pipeline {
             success {
                 echo 'Build and tests passed!'
             }
-            fealure {
+            failure {
                 echo 'Build failed.'
             }
     }
